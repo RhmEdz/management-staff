@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\RoomtypeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,4 +20,15 @@ Route::get('/', function () {
 // admin Dashboard
 Route::get('/admin', function() {
     return view ('Dashboard');
+});
+
+// RoomType Routes
+Route::resource('roomtype', RoomtypeController::class);
+
+Route::get('/register', function() {
+    return view ('register');
+});
+
+Route::get('/login', function() {
+    return view ('login');
 });
